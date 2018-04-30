@@ -22,4 +22,26 @@ class User < ApplicationRecord
       user.image = auth.info.image # assuming the user model has an image
     end
   end
+
+  def profile_thumbnail
+    image
+  end
+
+  def large_profile_image
+    "https://graph.facebook.com/#{uid}/picture?height=1080&width=1080"
+  end
+
+  def profile_image_is_size(width = 400, height = 400)
+    "https://graph.facebook.com/#{uid}/picture?height=#{height}&width=#{width}"
+  end
+
+  def first_name
+    name.split(" ").first
+  end
+
+  def last_name
+    name.split(" ").last
+  end
+  
+  
 end
