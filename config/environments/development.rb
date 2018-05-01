@@ -56,4 +56,7 @@ Rails.application.configure do
   # Use an evented file watcher to asynchronously detect changes in source code,
   # routes, locales, etc. This feature depends on the listen gem.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
+  #To disable this check, please add `config.webpacker.check_yarn_integrity = false`
+  #to your Rails development config file (config/environments/development.rb).
+  config.webpacker.check_yarn_integrity = false
 end
